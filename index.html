@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- Aqui aprendimos a utilizar el v-model -->
+    <!-- <input type="text" v-model="hola">
+    {{ hola }} -->
+
+    <!-- Utilizamos V-for y Computed -->
+    <!-- <select v-model="frameworkElegido">
+      <option
+        :value="framework.value"
+        v-for="(framework, index) in frameworks"
+        :key="index"
+      >
+        {{ framework.name }}
+      </option>
+    </select>
+    {{ miFrameworkFavorito }} -->
+
+    <!-- Aqui utilizamos created y como obtenemos información de una API -->
+
+    <button @click="obtenerPersonajes">
+      Traeme los personajes de Rick & Morty
+    </button>
+
+    <select v-model="personajeElegido">
+      <option 
+        :value="index" v-for="(personaje, index) in personajes"
+        :key="index"
+      >
+        {{ personaje.name }}
+      </option>
+    </select>
+
+    <div v-if="personajes.length > 0">
+      {{ muestrameElPrimerPersonaje() }}
+    </div>
+  </div>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="./index.js"></script>
+</body>
+</html>
